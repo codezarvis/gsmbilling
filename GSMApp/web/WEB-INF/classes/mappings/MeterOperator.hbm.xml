@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+  
+<hibernate-mapping>
+    <class name="com.gsm.domain.sub.MeterOperator" table="meteroperator">
+        <id column="id" name="operatorId" type="java.lang.String">
+            <generator class="assigned" />
+        </id>
+		
+        <property column="guid" name="guid" type="java.lang.String" />
+        <property column="operatorname" name="operatorName" type="java.lang.String" />
+        <property column="area" name="area" type="java.lang.String" />
+        <property column="wardnum" name="wardNo" type="java.lang.String" />
+        <property column ="city" name = "city" type = "java.lang.String"/>
+        <property column="createdon" name="createdOn" type="java.util.Date" />
+        <property column="createdby" name="createdBy" type="java.lang.Integer" />
+        <property column="modifiedon" name="modifiedOn" type="java.util.Date" />
+        <property column="modifiedby" name="modifiedBy" type="java.lang.Integer" />
+        <property column="active" name="active" type="java.lang.Integer" />
+		
+		
+    </class>
+</hibernate-mapping>
