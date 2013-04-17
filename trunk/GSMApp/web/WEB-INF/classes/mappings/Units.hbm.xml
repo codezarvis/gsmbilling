@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+  
+<hibernate-mapping>
+    <class name="com.gsm.domain.sub.Units" table="units">
+        <id column="id" name="id" type="java.lang.Integer">
+            <generator class="native" />
+        </id>
+		
+        <property column="guid" name="guid" type="java.lang.String" />
+        <property column="meterNumber" name="meterNumber" type="java.lang.String" />
+        <property column="readingdate" name="readingDate" type="java.util.Date" />
+        <property column ="previousReading" name = "previousReading" type = "java.lang.Integer"/>
+        <property column ="currentReading" name = "currentReading" type = "java.lang.Integer"/>
+        <property column ="totalUnits" name = "totalUnits" type = "java.lang.Integer"/>
+        <property column ="totalPrice" name = "totalPrice" type = "java.lang.Double"/>
+        <property column ="status" name = "status" type = "java.lang.String"/>
+        <property column="createdon" name="createdOn" type="java.util.Date" /> 
+        <property column="createdby" name="createdBy" type="java.lang.Integer" />
+        <property column="modifiedon" name="modifiedOn" type="java.util.Date" />
+        <property column="modifiedby" name="modifiedBy" type="java.lang.Integer" />
+        <property column="active" name="active" type="java.lang.Integer" />
+		
+		
+    </class>
+</hibernate-mapping>
