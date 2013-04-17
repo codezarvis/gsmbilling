@@ -24,7 +24,7 @@
             <!-- Header -->
             <div id="header">
 
-                <h1 id="logo"><a href="./" title="[Go to homepage]"><img src="design/logo.gif" alt="Logo" /></a></h1>
+                <h1 id="logo"><a href="./" title="[Go to homepage]"><img src="assets/images/f301.gif" width="165" height="60" alt="Logo" /></a></h1>
 
                 <hr class="noscreen" />
 
