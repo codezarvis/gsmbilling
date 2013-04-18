@@ -127,13 +127,13 @@
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
 
-            <div class="title01-top"></div>
-            <div class="title01">    
-                <div class="title01-in">
-                    <h3 class="ico-info"></h3>
-                </div>
-            </div>                
-            <div class="title01-bottom"></div>
+             <div class="title01-top"></div>
+                <div class="title01">    
+                    <div class="title01-in">
+                        <h3 class="ico-info">E-Bill App</h3>
+                    </div>
+                </div>                
+                <div class="title01-bottom"></div>
 
             <div class="box">
 
@@ -153,7 +153,7 @@
                 <a href="">Contact</a>
             </p>
 
-            <p align="center">&copy;&nbsp;2009 <a href="">Your Company</a><br />
+            <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
                 <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
                 <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
             <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->

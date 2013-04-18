@@ -168,13 +168,13 @@
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
 
-            <div class="title01-top"></div>
-            <div class="title01">    
-                <div class="title01-in">
-                    <h3 class="ico-info"></h3>
-                </div>
-            </div>                
-            <div class="title01-bottom"></div>
+           <div class="title01-top"></div>
+                <div class="title01">    
+                    <div class="title01-in">
+                        <h3 class="ico-info">E-Bill App</h3>
+                    </div>
+                </div>                
+                <div class="title01-bottom"></div>
 
             <div class="box">
 
