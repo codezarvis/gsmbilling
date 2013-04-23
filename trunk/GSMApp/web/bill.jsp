@@ -38,7 +38,7 @@
             #heading{
                 position: relative;              
                 left:10px;
-                top: -1px;
+                top: 0px;
                 font-weight: bold;
                 font-size: large;
             }
@@ -47,24 +47,26 @@
             #clientDiv{
 
                 position: relative;
-                left: 570px;
+                left: 28px;
                 display: none;
             }
 
             #errDiv{
 
                 position: relative;
-                left: 540px;
+                left: -2px;
+                top: 20px;
                 font-size: large;
-                width:300px;
+                width:315px;
                 display: none;
+                color: red;
 
             }
 
             #bill{
 
                 position: relative;
-                left: 500px;
+                left: 17px;
                 display: none;
             }
 
@@ -199,46 +201,47 @@
                 <div id="search-in">
 
                     <div id="heading"> Welcome, <c:out value = "${operator.operatorName}"></c:out> </div>
-                        <div id="val">
-                            <a href="SessionController">Home</a> | <a href="SignOutController">SignOut</a>
-
-                        </div>
+                    <div id="val">
+                        <a href="SessionController">Home</a> | <a href="SignOutController">SignOut</a>
 
                     </div>
 
-                    <div id="search-bottom"></div>
-                    <!-- Catalog -->
+                </div>
 
-                    <br/><br/>
-                    <div class="box">
-                        <div id="col-l">
+                <div id="search-bottom"></div>
+                <!-- Catalog -->
 
-                            <div class="title01-top"></div>
-                            <div class="title01"> 
-                                <br/>
-                                <div class="title01-in">
+                <br/><br/>
+                <div class="box">
+                    <div id="col-l">
 
-                                    <h2 align="center" class="ico-list">Client Bill Generation Form</h2>
-                                    <hr/>
-                                </div>
+                        <div class="title01-top"></div>
+                        <div class="title01"> 
+                            <br/>
+                            <div class="title01-in">
 
-                                <form id="billGenerationForm">
-                                    <div id="tableView1">
+                                <h2 align="center" class="ico-list">Client Bill Generation Form</h2>
+                                <hr/>
+                            </div>
 
-                                        <p align="center">Enter Meter Number <input type="text" name="meterId" id="meterId"/></p>
-                                        <p align="center"><a href="#" id="link">Get Client Details</a></p>
+                            <form id="billGenerationForm">
+                                <div id="tableView1">
 
-                                        <div id="errDiv"></div>
+                                    <p align="center">Enter Meter Number <input type="text" name="meterId" id="meterId"/></p>
 
-                                        <div id="clientDiv">
+                                    <p align="center"><a href="#" id="link">Get Client Details</a></p>
 
-                                        </div>
+                                    <div id="errDiv"></div>
 
-                                        <div id="bill">
-                                            <br/>
-                                            <table>
-                                                <tr>
-                                                    <td>Reading Date</td><td><input type="text" value= "<%=new java.util.Date()%>"/></td>
+                                    <div id="clientDiv">
+
+                                    </div>
+
+                                    <div id="bill">
+
+                                        <table>
+                                            <tr>
+                                                <td>Reading Date</td><td><input type="text" value= "<%=new java.util.Date()%>"/></td>
                                             </tr>
                                             <tr></tr><tr></tr><tr></tr>
                                             <tr>
@@ -285,13 +288,13 @@
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
 
-             <div class="title01-top"></div>
-                <div class="title01">    
-                    <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
-                    </div>
-                </div>                
-                <div class="title01-bottom"></div>
+            <div class="title01-top"></div>
+            <div class="title01">    
+                <div class="title01-in">
+                    <h3 class="ico-info">E-Bill App</h3>
+                </div>
+            </div>                
+            <div class="title01-bottom"></div>
 
             <div class="box">
 
@@ -307,8 +310,8 @@
             <hr class="noscreen" />
 
             <p class="f-right noprint">
-                <a href="">Sitemap</a>,
-                <a href="">Contact</a>
+                <a href=""></a>,
+                <a href=""></a>
             </p>
 
             <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
