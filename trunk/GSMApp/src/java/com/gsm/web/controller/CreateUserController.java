@@ -76,7 +76,7 @@ public class CreateUserController extends HttpServlet {
             properties.setProperty("mail.smtp.auth", "true");
             properties.setProperty("mail.smtp.starttls.enable", "true");
             
-            Session session = Session.getDefaultInstance(properties, new MyAuthenticator("sushi.indukuri@gmail.com", "warwickshiremba 24"));
+            Session session = Session.getDefaultInstance(properties, new MyAuthenticator("appaccnt28@gmail.com", "aanya 28"));
             
             String[] tos = {request.getParameter("email")};
            
@@ -90,7 +90,7 @@ public class CreateUserController extends HttpServlet {
             }
             
             message.setRecipients(Message.RecipientType.TO, address);
-            message.setFrom(new InternetAddress("sushi.indukuri@gmail.com"));                    
+            message.setFrom(new InternetAddress("appaccnt28@gmail.com"));                    
             message.setSubject("Registration Details");
             message.setSentDate(new java.util.Date());
            
