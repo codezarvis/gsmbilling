@@ -124,6 +124,7 @@
                         data:$('#userCreationForm').serialize(),
                         url:'${pageContext.request.contextPath}/CreateUserController',
                         success : function(response) {
+                            
                             alert(response);
                             $('#bfr').css('display', 'none'); 
                             $('#serviceNum').val(" ");
@@ -179,57 +180,57 @@
                 <div id="search-in">
 
                     <div id="heading"> Welcome, <c:out value="${user.userName}"></c:out> </div>
-                        <div id="val">
-                            <a href="admin.jsp">Home</a> | <a href="SignOutController">SignOut</a>
-
-                        </div>
+                    <div id="val">
+                        <a href="admin.jsp">Home</a> | <a href="SignOutController">SignOut</a>
 
                     </div>
 
-                    <div id="search-bottom"></div>
-                    <!-- Catalog -->
+                </div>
 
-                    <br/><br/>
-                    <div class="box">
-                        <div id="col-l">
+                <div id="search-bottom"></div>
+                <!-- Catalog -->
 
-                            <div class="title01-top"></div>
-                            <div class="title01"> 
-                                <br/>
-                                <div class="title01-in">
+                <br/><br/>
+                <div class="box">
+                    <div id="col-l">
 
-                                    <h2 align="center" class="ico-list">New User Profile</h2>
-                                    <hr/>
-                                </div>
+                        <div class="title01-top"></div>
+                        <div class="title01"> 
+                            <br/>
+                            <div class="title01-in">
 
-                                <form id="userCreationForm">
-                                    <div id="table">
-                                        <table>
+                                <h2 align="center" class="ico-list">New User Profile</h2>
+                                <hr/>
+                            </div>
 
-                                            <tr>
-                                                <td>Service No</td><td><input type="text" name="serviceNum" id="serviceNum" ></td>
-                                            </tr>
-                                            <tr></tr><tr></tr><tr></tr>
+                            <form id="userCreationForm">
+                                <div id="table">
+                                    <table>
 
-                                            <tr>
-                                                <td>First Name</td><td><input type="text" name="firstName" id="firstName" ></td>
-                                            </tr>
-                                            <tr></tr><tr></tr><tr></tr>
+                                        <tr>
+                                            <td>Service No</td><td><input type="text" name="serviceNum" id="serviceNum" ></td>
+                                        </tr>
+                                        <tr></tr><tr></tr><tr></tr>
 
-                                            <tr>
-                                                <td>Last Name</td><td><input type="text" name="lastName" id="lastName" ></td>
-                                            </tr>
-                                            <tr></tr><tr></tr><tr></tr>
+                                        <tr>
+                                            <td>First Name</td><td><input type="text" name="firstName" id="firstName" ></td>
+                                        </tr>
+                                        <tr></tr><tr></tr><tr></tr>
 
-                                            <tr>
-                                                <td>Address</td><td><textarea rows="2" cols="14" name="address" id="address"></textarea></td>
-                                            </tr>
-                                            <tr></tr><tr></tr><tr></tr>
+                                        <tr>
+                                            <td>Last Name</td><td><input type="text" name="lastName" id="lastName" ></td>
+                                        </tr>
+                                        <tr></tr><tr></tr><tr></tr>
 
-                                            <tr>
+                                        <tr>
+                                            <td>Address</td><td><textarea rows="2" cols="14" name="address" id="address"></textarea></td>
+                                        </tr>
+                                        <tr></tr><tr></tr><tr></tr>
 
-                                                <td>Area
-                                                </td><td><select name="area" id="area">
+                                        <tr>
+
+                                            <td>Area
+                                            </td><td><select name="area" id="area">
                                                     <c:forEach items="${list}" var="operator">
                                                         <option><c:out value="${operator.area}"></c:out></option>
                                                     </c:forEach>
@@ -300,13 +301,13 @@
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
 
-             <div class="title01-top"></div>
-                <div class="title01">    
-                    <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
-                    </div>
-                </div>                
-                <div class="title01-bottom"></div>
+            <div class="title01-top"></div>
+            <div class="title01">    
+                <div class="title01-in">
+                    <h3 class="ico-info">E-Bill App</h3>
+                </div>
+            </div>                
+            <div class="title01-bottom"></div>
 
             <div class="box">
 
