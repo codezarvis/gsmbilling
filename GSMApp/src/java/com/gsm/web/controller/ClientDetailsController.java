@@ -12,12 +12,16 @@ import com.gsm.service.utils.DomainServiceUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.smslib.AGateway;
+import org.smslib.IOutboundMessageNotification;
+import org.smslib.OutboundMessage;
+import org.smslib.Service;
+import org.smslib.modem.SerialModemGateway;
 
 /**
  *
@@ -39,7 +43,7 @@ public class ClientDetailsController extends HttpServlet {
 
         Client client = clientService.findByMeterNumber(id);
 
-         if (client == null) {
+        if (client == null) {
 
             out.println("Enter correct Meter Id");
             return;
@@ -60,7 +64,7 @@ public class ClientDetailsController extends HttpServlet {
                 return;
             }
         }
-        
+
         out.println("<html>");
         out.println("<body>");
         out.println("<table border='1'>");
@@ -163,6 +167,40 @@ public class ClientDetailsController extends HttpServlet {
         units.setActive(1);
 
         unitService.create(units);
+        ClientService clientService = DomainServiceUtils.getClientService();
+        Client client = clientService.findByMeterNumber(units.getMeterNumber());
+
+        class OutBoundNotification implements IOutboundMessageNotification {
+
+            public void process(AGateway arg0, OutboundMessage arg1) {
+            }
+        }
+        OutBoundNotification boundNotification = new OutBoundNotification();
+        SerialModemGateway gateway = new SerialModemGateway("com", "COM14",
+                115200, "", "");
+
+        gateway.setOutbound(true);
+
+        gateway.setInbound(true);
+
+        gateway.setSmscNumber("+9848001104");
+
+        Service.getInstance().setOutboundMessageNotification(
+                boundNotification);
+
+        try {
+            Service.getInstance().addGateway(gateway);
+            Service.getInstance().startService();
+
+            OutboundMessage message = new OutboundMessage(client.getMobile(), "Your Bill for this Month is Dispatched, The bill Amount is : " + units.getTotalPrice() + "Total Units : " + units.getTotalUnits());
+
+            Service.getInstance().sendMessage(
+                    message);
+            Service.getInstance().stopService();
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
 
     }
 }
