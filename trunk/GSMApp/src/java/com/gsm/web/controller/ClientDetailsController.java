@@ -57,9 +57,9 @@ public class ClientDetailsController extends HttpServlet {
 
             Calendar c = Calendar.getInstance();
             c.setTime(units.getReadingDate());
-            System.out.println("=============");
+            
             if (calendar.get(Calendar.MONTH) <= c.get(Calendar.MONTH)) {
-                
+
                 out.println("1");
                 return;
             }
@@ -96,7 +96,7 @@ public class ClientDetailsController extends HttpServlet {
         out.println("<td>Previous Reading</td>");
 
         if (list.isEmpty()) {
-            out.println("<td><input type='text' value='0' id='nullReading'/></td>");
+            out.println("<td><input type='text' value='0' id='reading'/></td>");
         } else {
 
             Units u = list.get(list.size() - 1);
