@@ -158,20 +158,10 @@
             
             function difference(){
                 var units = document.getElementById('units');
-                //                var nullReading = parseInt(document.getElementById('nullReading').value);
                 var reading = parseInt(document.getElementById('reading').value);
                 var crntReading = parseInt(document.getElementById('crntReading').value);
                 units.value = crntReading - reading; 
                    
-                //                if(nullReading){
-                //                    
-                //                    units.value = crntReading - nullReading; 
-                //                }
-                //                else if(reading)  {
-                 
-                //                }
-                
-            
             }
             
          
