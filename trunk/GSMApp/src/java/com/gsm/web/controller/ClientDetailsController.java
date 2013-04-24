@@ -57,9 +57,9 @@ public class ClientDetailsController extends HttpServlet {
 
             Calendar c = Calendar.getInstance();
             c.setTime(units.getReadingDate());
-
-            if (calendar.get(Calendar.MONTH) >= c.get(Calendar.MONTH)) {
-                System.out.println("1===============1");
+            System.out.println("=============");
+            if (calendar.get(Calendar.MONTH) <= c.get(Calendar.MONTH)) {
+                
                 out.println("1");
                 return;
             }
