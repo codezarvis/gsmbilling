@@ -111,7 +111,7 @@
                         success : function(response) {
                             alert(response);
                             $('#bfr').css('display', 'none'); 
-                            $('#operatorId').val(" ");
+                            $('#operatorId').val("");
                             $('#operatorName').val(" ");
                             $('#area').val(" ");
                             $('#wardNum').val(" ");
