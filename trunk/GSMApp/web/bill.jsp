@@ -19,6 +19,17 @@
 
         <style type="text/css">
 
+            #bfr{
+
+                position: relative;
+                height: 45px;
+                left:72px;
+                width: 50px;
+                top: -54px;
+                display: none;
+            }
+
+
             #tableView1{
 
                 position: relative;
@@ -57,7 +68,7 @@
                 left: -2px;
                 top: 20px;
                 font-size: large;
-                width:315px;
+                width:330px;
                 display: none;
                 color: red;
 
@@ -97,11 +108,12 @@
                             
                             if(res == 1){
                                 $("#errDiv").css('display','block');
-                                $("#errDiv").html("Bill Already Generated For This Month");
+                                $("#errDiv").html("Bill Has Been Generated For This Month");
                                 $("#bill").css('display','none');
                                 return;
                             }
                            
+                            $("#errDiv").css('display','none');
                             $("#clientDiv").css('display','block');
                             $("#clientDiv").html(response);
                             $("#bill").css('display','block');
@@ -115,6 +127,7 @@
                 
                 $("#btnClk").click(function(){
                 
+                                
                     var crntreading = $("#crntReading").val();
                                                           
                     if(crntreading == null || crntreading.length == 0){
@@ -128,10 +141,10 @@
                         url:'${pageContext.request.contextPath}/ClientDetailsController',
                         success : function(response1) {
                             alert("Bill Generated Successfully..!!");
-                            $('#date').val(" ");
-                            $('#reading').val(" ");
-                            $('#crntReading').val(" ");
-                            $('#units').val(" ");
+                            $('#meterId').val("");
+                            $("#clientDiv").css('display','none');
+                            $("#bill").css('display','none');
+                            
                         }
                     
                     
