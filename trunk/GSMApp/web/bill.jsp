@@ -204,47 +204,47 @@
                 <div id="search-in">
 
                     <div id="heading"> Welcome, <c:out value = "${operator.operatorName}"></c:out> </div>
-                    <div id="val">
-                        <a href="SessionController">Home</a> | <a href="SignOutController">SignOut</a>
+                        <div id="val">
+                            <a href="SessionController">Home</a> | <a href="SignOutController">SignOut</a>
+
+                        </div>
 
                     </div>
 
-                </div>
+                    <div id="search-bottom"></div>
+                    <!-- Catalog -->
 
-                <div id="search-bottom"></div>
-                <!-- Catalog -->
+                    <br/><br/>
+                    <div class="box">
+                        <div id="col-l">
 
-                <br/><br/>
-                <div class="box">
-                    <div id="col-l">
+                            <div class="title01-top"></div>
+                            <div class="title01"> 
+                                <br/>
+                                <div class="title01-in">
 
-                        <div class="title01-top"></div>
-                        <div class="title01"> 
-                            <br/>
-                            <div class="title01-in">
+                                    <h2 align="center" class="ico-list">Client Bill Generation Form</h2>
+                                    <hr/>
+                                </div>
 
-                                <h2 align="center" class="ico-list">Client Bill Generation Form</h2>
-                                <hr/>
-                            </div>
+                                <form id="billGenerationForm">
+                                    <div id="tableView1">
 
-                            <form id="billGenerationForm">
-                                <div id="tableView1">
+                                        <p align="center">Enter Meter Number <input type="text" name="meterId" id="meterId"/></p>
 
-                                    <p align="center">Enter Meter Number <input type="text" name="meterId" id="meterId"/></p>
+                                        <p align="center"><a href="#" id="link">Get Client Details</a></p>
 
-                                    <p align="center"><a href="#" id="link">Get Client Details</a></p>
+                                        <div id="errDiv"></div>
 
-                                    <div id="errDiv"></div>
+                                        <div id="clientDiv">
 
-                                    <div id="clientDiv">
+                                        </div>
 
-                                    </div>
+                                        <div id="bill">
 
-                                    <div id="bill">
-
-                                        <table>
-                                            <tr>
-                                                <td>Reading Date</td><td><input type="text" value= "<%=new java.util.Date()%>"/></td>
+                                            <table>
+                                                <tr>
+                                                    <td>Reading Date</td><td><input type="text" value= "<%=new java.util.Date()%>"/></td>
                                             </tr>
                                             <tr></tr><tr></tr><tr></tr>
                                             <tr>
@@ -313,8 +313,8 @@
             <hr class="noscreen" />
 
             <p class="f-right noprint">
-                <a href=""></a>,
-                <a href=""></a>
+                <a href="">Sitemap</a>,
+                <a href="">Contact</a>
             </p>
 
             <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
