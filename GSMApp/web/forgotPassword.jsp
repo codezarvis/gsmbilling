@@ -109,11 +109,11 @@
             <div id="page" class="box">
 
                 <div id="search-top">
-                      
+
                 </div>
 
                 <div id="search-in"> 
-                  <a href="home.jsp">Home</a>
+                    <a href="home.jsp">Home</a>
                 </div>
 
                 <div id="search-bottom"></div>
@@ -186,7 +186,7 @@
 
 
                                     </table>
-                                                                                 
+
                                     <div id="bfr"><img src="assets/images/ajax-loader-large.gif"></div>
 
                                 </form>
@@ -247,7 +247,10 @@
             <div id="footer">
                 <hr class="noscreen" />
 
-
+                <p class="f-right noprint">
+                    <a href="">Sitemap</a>,
+                    <a href="">Contact</a>
+                </p>
 
                 <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
                     <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
