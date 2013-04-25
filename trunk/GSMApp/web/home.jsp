@@ -15,8 +15,8 @@
         <script type="text/javascript" src="js/tooltip.js"></script>
         <script type="text/javascript" src="js/showdetail.js"></script>
         <title>Home</title>
-        
-         <script src="${pageContext.request.contextPath}/assets/js/jquery-1.8.2.min.js"></script>
+
+        <script src="${pageContext.request.contextPath}/assets/js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript">
            
             $(document).ready(function(){
@@ -51,7 +51,7 @@
                
             });
         </script>
-        
+
     </head>
 
     <body>
@@ -108,7 +108,7 @@
                         </div>                
                         <div class="title01-bottom"></div>
 
-                       
+
 
                         <hr class="noscreen" />
                     </div> <!-- /col-l -->
@@ -123,9 +123,9 @@
                             <div class="in">
 
                                 <form id="loginForm" method="POST" action="LoginController">
-                                   
+
                                     <table align="center" cell-spacing="8">
-                                       
+
 
                                         <%
                                             if (request.getAttribute("403") != null) {
@@ -176,7 +176,7 @@
                         <div id="signup-bottom"></div>
 
                         <!-- Tabs -->
-                       
+
                         <!-- Most Recent -->
                         <div id="tab-01">
 
@@ -197,7 +197,7 @@
                     </div> <!-- /col-r -->
                 </div> <!-- /box -->
 
-                 <div class="title01-top"></div>
+                <div class="title01-top"></div>
                 <div class="title01">    
                     <div class="title01-in">
                         <h3 class="ico-info">E-Bill App</h3>
@@ -219,7 +219,10 @@
             <div id="footer">
                 <hr class="noscreen" />
 
-
+                <p class="f-right noprint">
+                    <a href="">Sitemap</a>,
+                    <a href="">Contact</a>
+                </p>
 
                 <p align="center">&copy;&nbsp;2009 <a href="">Your Company</a><br />
                     <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
