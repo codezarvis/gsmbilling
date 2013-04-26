@@ -189,7 +189,7 @@
             <hr class="noscreen" />
 
             <p class="f-right noprint">
-                <a href="">Sitemap</a>,
+               
                 <a href="">Contact</a>
             </p>
 
