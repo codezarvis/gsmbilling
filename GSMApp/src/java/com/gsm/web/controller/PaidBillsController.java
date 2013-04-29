@@ -35,21 +35,20 @@ public class PaidBillsController extends HttpServlet {
 
         UnitService unitService = DomainServiceUtils.getUnitService();
         List<Units> list = unitService.findByMeterId(client.getMeterNumber());
-        System.out.println("============="+list);
-        
+        System.out.println("=============" + list);
+
         if (list == null) {
 
             out.println("Your bills are yet to be paid..!!");
             return;
         }
 
-                
+
         HttpSession session = request.getSession();
         session.setAttribute("PaidBills", list);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/paidBill.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect("paidBill.jsp");
 
-        
+
 
     }
 }

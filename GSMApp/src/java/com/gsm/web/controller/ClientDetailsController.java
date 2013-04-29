@@ -57,7 +57,7 @@ public class ClientDetailsController extends HttpServlet {
 
             Calendar c = Calendar.getInstance();
             c.setTime(units.getReadingDate());
-            
+
             if (calendar.get(Calendar.MONTH) <= c.get(Calendar.MONTH)) {
 
                 out.println("1");
@@ -69,11 +69,11 @@ public class ClientDetailsController extends HttpServlet {
         out.println("<body>");
         out.println("<table border='1'>");
         out.println("<tr>");
-        out.println("<td>Service Number</td>");
+        out.println("<td>Service Num</td>");
         out.println("<td>" + client.getServiceNumber() + "</td>");
         out.println("</tr>");
         out.println("<tr>");
-        out.println("<td>Name</td>");
+        out.println("<td>User Name</td>");
         out.println("<td>" + client.getFirstName() + "</td>");
         out.println("</tr>");
         out.println("<tr>");
@@ -176,14 +176,14 @@ public class ClientDetailsController extends HttpServlet {
             }
         }
         OutBoundNotification boundNotification = new OutBoundNotification();
-        SerialModemGateway gateway = new SerialModemGateway("com", "COM14",
+        SerialModemGateway gateway = new SerialModemGateway("com", "COM40",
                 115200, "", "");
 
         gateway.setOutbound(true);
 
         gateway.setInbound(true);
 
-        gateway.setSmscNumber("+9848001104");
+        gateway.setSmscNumber("+919885005444");
 
         Service.getInstance().setOutboundMessageNotification(
                 boundNotification);
