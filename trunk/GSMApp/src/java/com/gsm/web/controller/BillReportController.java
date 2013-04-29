@@ -46,10 +46,10 @@ public class BillReportController extends HttpServlet {
         out.println("<table align='center' border='1'>");
 
         out.println("<tr>");
-        out.println("<td>Client Name</td>");
         out.println("<td>Meter Number</td>");
+        out.println("<td>User Name</td>");
         out.println("<td>Reading Date</td>");
-        out.println("<td>Bill Amount</td>");
+        out.println("<td>Amount</td>");
         out.println("</tr>");
 
         for (Payments payments : payList) {
@@ -75,7 +75,7 @@ public class BillReportController extends HttpServlet {
 
         }
         out.println("<tr>");
-        out.println("<td>Total Amount</td>");
+        out.println("<td><fmt:message key=\"lbl.total\"/></td>");
         out.println("<td></td><td></td>");
         out.println("<td>" + total + "</td>");
         out.println("</tr>");

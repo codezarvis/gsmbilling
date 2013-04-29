@@ -48,7 +48,6 @@ public class ViewBillsController extends HttpServlet {
        HttpSession session = request.getSession();
        
        session.setAttribute("BillsList", list);
-       RequestDispatcher dispatcher = request.getRequestDispatcher("/clientBill.jsp");
-       dispatcher.forward(request, response);
+        response.sendRedirect("clientBill.jsp");
     }
 }

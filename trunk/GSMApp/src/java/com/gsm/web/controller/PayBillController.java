@@ -53,8 +53,7 @@ public class PayBillController extends HttpServlet {
 
         HttpSession httpSession = request.getSession();
         httpSession.setAttribute("units", units);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/billPayments.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect("billPayments.jsp");
 
     }
 }

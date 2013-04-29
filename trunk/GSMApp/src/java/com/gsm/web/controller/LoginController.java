@@ -26,19 +26,25 @@ import javax.servlet.http.HttpSession;
  * @author user
  */
 public class LoginController extends HttpServlet {
-
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+    }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         String userName = request.getParameter("userName");
         String pwd = request.getParameter("password");
         String alert = request.getParameter("alert");
-
+        
         try {
-
+            
             AppUserService appUserService = DomainServiceUtils.getAppUserService();
             AppUser appUser = appUserService.authenticate(userName, pwd);
             
@@ -49,50 +55,50 @@ public class LoginController extends HttpServlet {
             Client client = clientService.findByServiceNumber(pwd);
             
             if (appUser == null) {
-
+                
                 out.println("Invalid UserName/Password !");
                 return;
             }
-
-
+            
+            
             if (alert != null) {
                 Cookie cookie = new Cookie("cName", appUser.getGuid());
                 cookie.setMaxAge(60 * 60 * 24 * 1);
                 response.addCookie(cookie);
-
+                
             }
-
+            
+            
             HttpSession session = request.getSession();
-
+            
             if (appUser.getUserRole().equalsIgnoreCase("admin")) {
                 session.setAttribute("user", appUser);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.jsp");
-                dispatcher.forward(request, response);
+                response.sendRedirect("admin.jsp");
+//                RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.jsp");
+//                dispatcher.forward(request, response);
                 return;
             }
-
+            
             if (appUser.getUserRole().equalsIgnoreCase("client")) {
                 session.setAttribute("user", appUser);
                 session.setAttribute("client", client);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/user.jsp");
-                dispatcher.forward(request, response);
+                response.sendRedirect("user.jsp");
                 return;
             }
-
+            
             if (appUser.getUserRole().equalsIgnoreCase("operator")) {
                 session.setAttribute("user", appUser);
                 session.setAttribute("operator", operator);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/operator.jsp");
-                dispatcher.forward(request, response);
+                response.sendRedirect("operator.jsp");
                 return;
             }
-
-
+            
+            
         } catch (Exception exception) {
             exception.printStackTrace();
-
-
+            
+            
         }
-
+        
     }
 }
