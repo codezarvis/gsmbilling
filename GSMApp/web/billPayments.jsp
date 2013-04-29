@@ -1,6 +1,14 @@
-<?xml version="1.0"?>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<c:if test="${param['lang']!=null}">
+
+    <fmt:setLocale value="${param['lang']}" scope="session"/>
+
+
+</c:if>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -32,6 +40,13 @@
                 position: relative;              
                 left:783px;
                 top: -1px;
+
+            }
+
+            #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
 
             }
         </style>
@@ -102,7 +117,7 @@
                 <hr class="noscreen" />
 
                 <!-- Date -->
-                 <div >
+                <div >
                     <p class="nom"><strong><%=new java.util.Date()%></strong>
                 </div>
                 <br/>
@@ -125,7 +140,7 @@
                 <div id="search-in">
 
                     <div id="val">
-                        <a href="SessionController">Home</a> | <a href="SignOutController">SignOut</a>
+                        <a href="SessionController"><fmt:message key="lbl.home"/></a> | <a href="SignOutController"><fmt:message key="lbl.signout"/></a>
 
                     </div>
 
@@ -138,12 +153,16 @@
                 <div class="box">
                     <div id="col-l">
 
+                        <div id="langs">
+                            <%@include file="header.jsp" %>
+                        </div>
+
                         <div class="title01-top"></div>
                         <div class="title01"> 
                             <br/>
                             <div class="title01-in">
 
-                                <h2 align="center" class="ico-list">Payment Gateway</h2>
+                                <h2 align="center" class="ico-list"><fmt:message key="lbl.gateway"/></h2>
                                 <hr/>
                             </div>
 
@@ -152,7 +171,7 @@
                                     <table align="center">
 
                                         <tr>
-                                            <td>Bank Name</td>
+                                            <td><fmt:message key="lbl.bankName"/></td>
                                             <td>
                                                 <select id="bank" name="bank">
                                                     <option value="SBI">State Bank of India</option>
@@ -164,37 +183,37 @@
                                         </tr>
 
                                         <tr>
-                                            <td>Card Number</td>
+                                            <td><fmt:message key="lbl.cardNum"/></td>
                                             <td><input type="text" id="cardNum" name="cardNum"/></td>
                                         </tr>
 
                                         <tr>
 
-                                            <td>Bill Amount</td>
+                                            <td><fmt:message key="lbl.billamnt"/></td>
                                             <td><input type="text" value="${units.totalPrice}" readonly="readonly" id="amount" name="amount"/></td>
                                         </tr>
 
                                         <tr>
 
-                                            <td>Payment Amount</td>
+                                            <td><fmt:message key="lbl.payment"/></td>
                                             <td><input type="text" id="payment" name="payment"/></td>
                                         </tr>
 
                                         <tr>
 
-                                            <td>Password</td>
+                                            <td><fmt:message key="lbl.password"/></td>
                                             <td><input type="password" name="pwd" id="pwd"/></td>
                                         </tr>
 
                                         <tr>
 
-                                            <td>Re-Enter Password</td>
+                                            <td><fmt:message key="lbl.cnfrmPwd"/></td>
                                             <td><input type="password" name="cnfrmPwd" id="cnfrmPwd"/></td>
                                         </tr>
                                     </table>
-                                    <p align="left"><input type="button" id="payBtn" value="Pay Bill"></p>
+                                            <p align="left"><input type="button" id="payBtn" value="<fmt:message key="lbl.pay"/>"></p>
                                     <br/>
-                                    <p align="left"><a href="SessionController">Cancel</a></p>
+                                    <p align="left"><a href="SessionController"><fmt:message key="lbl.cancel"/></a></p>
                                     <br/>
                                 </div>
                             </form>
@@ -224,21 +243,20 @@
                     <hr class="noscreen" />          
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
-
-           <div class="title01-top"></div>
-                <div class="title01">    
-                    <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
-                    </div>
-                </div>                
-                <div class="title01-bottom"></div>
+            <div class="title01-top"></div>
+            <div class="title01">    
+                <div class="title01-in">
+                    <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
+                </div>
+            </div>                
+            <div class="title01-bottom"></div>
 
             <div class="box">
 
 
             </div> <!-- /box -->
 
-            <p class="t-center"><a href="">Show more &raquo;</a></p>
+            <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
 
         </div> <!-- /page -->
 
@@ -247,15 +265,13 @@
             <hr class="noscreen" />
 
             <p class="f-right noprint">
-                
-                <a href="">Contact</a>
+
+                <a href=""><fmt:message key="lbl.contact"/></a>
             </p>
 
-            <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
+            <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
                 <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
-            <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-
+            </p>
         </div> <!-- /footer -->
 
         </div> <!-- /main -->

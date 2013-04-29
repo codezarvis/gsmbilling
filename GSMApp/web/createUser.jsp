@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -19,6 +19,14 @@
 
         <style type="text/css">
 
+              
+            #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
+
+            }
+            
             #bfr{
 
                 position: relative;
@@ -179,9 +187,9 @@
                 <div id="search-top"></div>
                 <div id="search-in">
 
-                    <div id="heading"> Welcome, <c:out value="${user.userName}"></c:out> </div>
-                    <div id="val">
-                        <a href="admin.jsp">Home</a> | <a href="SignOutController">SignOut</a>
+                    <div id="heading"> <fmt:message key="lbl.welcome"/>, <c:out value="${user.userName}"></c:out> </div>
+                        <div id="val">
+                            <a href="admin.jsp"><fmt:message key="lbl.home"/></a> | <a href="SignOutController"><fmt:message key="lbl.signout"/></a>
 
                     </div>
 
@@ -193,13 +201,15 @@
                 <br/><br/>
                 <div class="box">
                     <div id="col-l">
-
+                        <div id="langs">
+                            <%@include file="header.jsp" %>
+                        </div>
                         <div class="title01-top"></div>
                         <div class="title01"> 
                             <br/>
                             <div class="title01-in">
 
-                                <h2 align="center" class="ico-list">New User Profile</h2>
+                                <h2 align="center" class="ico-list"><fmt:message key="lbl.profile"/></h2>
                                 <hr/>
                             </div>
 
@@ -208,133 +218,132 @@
                                     <table>
 
                                         <tr>
-                                            <td>Service No</td><td><input type="text" name="serviceNum" id="serviceNum" ></td>
+                                            <td><fmt:message key="lbl.serviceNo"/></td><td><input type="text" name="serviceNum" id="serviceNum" ></td>
                                         </tr>
                                         <tr></tr><tr></tr><tr></tr>
 
                                         <tr>
-                                            <td>First Name</td><td><input type="text" name="firstName" id="firstName" ></td>
+                                            <td><fmt:message key="lbl.firstName"/></td><td><input type="text" name="firstName" id="firstName" ></td>
                                         </tr>
                                         <tr></tr><tr></tr><tr></tr>
 
                                         <tr>
-                                            <td>Last Name</td><td><input type="text" name="lastName" id="lastName" ></td>
+                                            <td><fmt:message key="lbl.lastName"/></td><td><input type="text" name="lastName" id="lastName" ></td>
                                         </tr>
                                         <tr></tr><tr></tr><tr></tr>
 
                                         <tr>
-                                            <td>Address</td><td><textarea rows="2" cols="14" name="address" id="address"></textarea></td>
+                                            <td><fmt:message key="lbl.address"/></td><td><textarea rows="2" cols="14" name="address" id="address"></textarea></td>
                                         </tr>
                                         <tr></tr><tr></tr><tr></tr>
 
                                         <tr>
 
-                                            <td>Area
-                                            </td><td><select name="area" id="area">
-                                                    <c:forEach items="${list}" var="operator">
-                                                        <option><c:out value="${operator.area}"></c:out></option>
-                                                    </c:forEach>
-                                                </select>
+                                            <td><fmt:message key="lbl.area"/>
+                                                </td><td><select name="area" id="area">
+                                                        <c:forEach items="${list}" var="operator">
+                                                            <option><c:out value="${operator.area}"></c:out></option>
+                                                        </c:forEach>
+                                                    </select>
 
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
 
-                                        <tr>
+                                            <tr>
 
-                                            <td>Ward Num</td><td>
-                                                <select name="wardNum" id="wardNum" >
-                                                    <c:forEach items="${list}" var="operator">
-                                                        <option><c:out value="${operator.wardNo}"></c:out></option>
-                                                    </c:forEach>
-                                                </select>
+                                                <td><fmt:message key="lbl.wardNum"/></td><td>
+                                                    <select name="wardNum" id="wardNum" >
+                                                        <c:forEach items="${list}" var="operator">
+                                                            <option><c:out value="${operator.wardNo}"></c:out></option>
+                                                        </c:forEach>
+                                                    </select>
 
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
 
-                                        <tr>
-                                            <td>Mobile</td><td><input type="text" name="mobile" id="mobile"  ></td>
-                                        </tr>
-                                        <tr></tr><tr></tr><tr></tr>
+                                            <tr>
+                                                <td><fmt:message key="lbl.mobile"/></td><td><input type="text" name="mobile" id="mobile"  ></td>
+                                            </tr>
+                                            <tr></tr><tr></tr><tr></tr>
 
-                                        <tr>
-                                            <td>E-mail</td><td><input type="text" name="email" id="email" ></td>
-                                        </tr>
-                                        <tr></tr><tr></tr><tr></tr>
+                                            <tr>
+                                                <td><fmt:message key="lbl.email"/></td><td><input type="text" name="email" id="email" ></td>
+                                            </tr>
+                                            <tr></tr><tr></tr><tr></tr>
 
-                                        <tr>
-                                            <td>Meter No</td><td><input type="text" name="meterNum" id="meterNum" ></td>
-                                        </tr>
+                                            <tr>
+                                                <td><fmt:message key="lbl.meterNum"/></td><td><input type="text" name="meterNum" id="meterNum" ></td>
+                                            </tr>
 
-                                    </table>
+                                        </table>
 
-                                    <p align="left"><input type="button" value="Create" id="btnCreate"> </p>
-                                    <br/>
-                                    <p align="left"><a href="SessionController">Cancel</a></p>
+                                        <p align="left"><input type="button" value="<fmt:message key="lbl.createBtn"/>" id="btnCreate"> </p>
+                                     
+                                        <p align="left"><a href="SessionController"><fmt:message key="lbl.cancel"/></a></p>
 
-                                    <div id="bfr"><img src="assets/images/ajax-loader-large.gif"></div>
-                                </div>
-                            </form>
-                            <div class="title01-bottom"></div>
-                        </div>                
+                                        <div id="bfr"><img src="assets/images/ajax-loader-large.gif"></div>
+                                    </div>
+                                </form>
+                                <div class="title01-bottom"></div>
+                            </div>                
 
 
-                        <div class="box">
+                            <div class="box">
 
-                        </div> <!-- /box -->
+                            </div> <!-- /box -->
+
+                            <hr class="noscreen" />
+                        </div> <!-- /col-l -->
+
+                        <!-- Sidebar -->
+
+
 
                         <hr class="noscreen" />
-                    </div> <!-- /col-l -->
-
-                    <!-- Sidebar -->
 
 
 
-                    <hr class="noscreen" />
+                        <script type="text/javascript">
+                            new Control.Tabs('switch');
+                        </script>
+
+                        <hr class="noscreen" />          
+                    </div> <!-- /col-r -->
+                </div> <!-- /box -->
+                <div class="title01-top"></div>
+                <div class="title01">    
+                    <div class="title01-in">
+                        <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
+                    </div>
+                </div>                
+                <div class="title01-bottom"></div>
+
+                <div class="box">
 
 
+                </div> <!-- /box -->
 
-                    <script type="text/javascript">
-                        new Control.Tabs('switch');
-                    </script>
+                <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
 
-                    <hr class="noscreen" />          
-                </div> <!-- /col-r -->
-            </div> <!-- /box -->
+            </div> <!-- /page -->
 
-            <div class="title01-top"></div>
-            <div class="title01">    
-                <div class="title01-in">
-                    <h3 class="ico-info">E-Bill App</h3>
-                </div>
-            </div>                
-            <div class="title01-bottom"></div>
+            <!-- Footer -->
+            <div id="footer">
+                <hr class="noscreen" />
 
-            <div class="box">
+                <p class="f-right noprint">
+
+                    <a href=""><fmt:message key="lbl.contact"/></a>
+                </p>
+
+                <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
+                    <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+                </p>
 
 
-            </div> <!-- /box -->
+            </div> <!-- /footer -->
 
-            <p class="t-center"><a href="">Show more &raquo;</a></p>
+            </div> <!-- /main -->
 
-        </div> <!-- /page -->
-
-        <!-- Footer -->
-        <div id="footer">
-            <hr class="noscreen" />
-
-            <p class="f-right noprint">
-               
-                <a href="">Contact</a>
-            </p>
-
-            <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
-                <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
-            <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-
-        </div> <!-- /footer -->
-
-        </div> <!-- /main -->
-
-    </body>
-</html>
+        </body>
+    </html>

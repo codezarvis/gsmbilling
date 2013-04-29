@@ -1,5 +1,13 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<c:if test="${param['lang']!=null}">
+
+    <fmt:setLocale value="${param['lang']}" scope="session"/>
+
+
+</c:if>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -28,7 +36,12 @@
                 display: none;
             }
 
+            #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
 
+            }
         </style>
         <script src="${pageContext.request.contextPath}/assets/js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript">
@@ -113,7 +126,7 @@
                 </div>
 
                 <div id="search-in"> 
-                    <a href="home.jsp">Home</a>
+                    <a href="home.jsp"><fmt:message  key="lbl.home"/></a>
                 </div>
 
                 <div id="search-bottom"></div>
@@ -123,11 +136,14 @@
                 <div class="box">
                     <div id="col-l">
 
+                        <div id="langs">
+                            <%@include file="header.jsp" %>
+                        </div>
                         <div class="title01-top"></div>
                         <div class="title01">    
                             <div class="title01-in">
-                                <p class="f-right noprint"><strong><a href="" class="add">Submit a Site</a></strong></p>
-                                <h2 class="ico-list">Katalog</h2>
+                                <p class="f-right noprint"><strong><a href="" class="add"></a><fmt:message key="lbl.head1"/></strong></p>
+                                <h2 class="ico-list"><fmt:message key="lbl.heading"/></h2>
                             </div>
                         </div>                
                         <div class="title01-bottom"></div>
@@ -142,7 +158,7 @@
 
                         <!-- Login -->
                         <div id="signup">
-                            <h3>Password Retrieval</h3>
+                            <h3><fmt:message key="lbl.pwdretrieval"/></h3>
 
                             <div class="in">
 
@@ -151,13 +167,13 @@
                                     <table align="center">
 
                                         <tr>
-                                            <td>UserName</td>
+                                            <td><fmt:message key="lbl.userName"/></td>
                                         </tr>
                                         <tr>
                                             <td><input type="text" name="userName" id="userName"/></td>
                                         </tr> <tr></tr> <tr></tr>                
                                         <tr>
-                                            <td>Question</td>
+                                            <td><fmt:message key="lbl.ques"/></td>
                                         </tr>   
                                         <tr>
                                             <td>
@@ -173,14 +189,14 @@
                                         </tr>
                                         <tr></tr> <tr></tr> <tr></tr>                
                                         <tr>
-                                            <td>Answer</td>
+                                            <td><fmt:message key="lbl.ans"/></td>
                                         </tr>
 
                                         <tr>
                                             <td><input type="text" name="answer" id="answer"/></td>
                                         </tr>  <tr></tr> <tr></tr> 
                                         <tr>
-                                            <td> <input type="button" value="Submit" id="submitbtn"/></td>
+                                            <td> <input type="button" value="<fmt:message key="lbl.submit"/>" id="submitbtn"/></td>
 
                                         </tr>                
 
@@ -228,7 +244,7 @@
                 <div class="title01-top"></div>
                 <div class="title01">    
                     <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
+                        <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
                     </div>
                 </div>                
                 <div class="title01-bottom"></div>
@@ -236,10 +252,9 @@
                 <div class="box">
 
 
-
                 </div> <!-- /box -->
 
-                <p class="t-center"><a href="">Show more &raquo;</a></p>
+                <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
 
             </div> <!-- /page -->
 
@@ -248,15 +263,13 @@
                 <hr class="noscreen" />
 
                 <p class="f-right noprint">
-                    
-                    <a href="">Contact</a>
+
+                    <a href=""><fmt:message key="lbl.contact"/></a>
                 </p>
 
-                <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
+                <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
                     <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                    <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
-                <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-
+                </p>
             </div> <!-- /footer -->
 
         </div> <!-- /main -->
