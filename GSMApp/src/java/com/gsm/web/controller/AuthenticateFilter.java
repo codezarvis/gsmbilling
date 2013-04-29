@@ -31,8 +31,6 @@ public class AuthenticateFilter implements Filter {
     // The filter configuration object we are associated with.  If
     // this value is null, this filter instance is not currently
     // configured. 
-    
-    
     private FilterConfig filterConfig = null;
 
     public AuthenticateFilter() {
@@ -151,7 +149,7 @@ public class AuthenticateFilter implements Filter {
             }
 
         }
-        
+
         if (reqURI.equals(request.getContextPath() + "/bill.jsp")) {
 
             AppUser user = (AppUser) request.getSession().getAttribute("user");
@@ -164,7 +162,150 @@ public class AuthenticateFilter implements Filter {
             }
 
         }
-        
+
+        if (reqURI.equals(request.getContextPath() + "/billPayments.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/billReport.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/clientBill.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/createOperator.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/createUser.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/header.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/operator.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/paidBill.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/user.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/viewClients.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
+        if (reqURI.equals(request.getContextPath() + "/viewOperators.jsp")) {
+
+            AppUser user = (AppUser) request.getSession().getAttribute("user");
+
+            if (user == null) {
+                request.setAttribute("403", "U R Not Authorized to View this Page, Please Login");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
+        }
+
         chain.doFilter(req, res);
 
     }
