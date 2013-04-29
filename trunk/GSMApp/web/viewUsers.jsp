@@ -1,5 +1,13 @@
-<?xml version="1.0"?>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<c:if test="${param['lang']!=null}">
+
+    <fmt:setLocale value="${param['lang']}" scope="session"/>
+
+
+</c:if>
 <%@page import="java.util.List"%>
 <%@page import="com.gsm.domain.sub.Client"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -43,6 +51,13 @@
                 font-weight: bold;
                 font-size: larger;
             }
+            
+              #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
+
+            }
         </style>
 
     </head>
@@ -80,27 +95,30 @@
 
                 <div id="search-top"></div>
                 <div id="search-in">
-                    <div id="heading"> Welcome, <c:out value="${user.userName}"></c:out> </div>
+                     <div id="heading"> <fmt:message key="lbl.welcome"/>, <c:out value="${user.userName}"></c:out> </div>
                         <div id="val">
-                            <a href="admin.jsp">Home</a> | <a href="SignOutController">SignOut</a>
-
-                        </div>
+                            <a href="admin.jsp"><fmt:message key="lbl.home"/></a> | <a href="SignOutController"><fmt:message key="lbl.signout"/></a>
 
                     </div>
 
-                    <div id="search-bottom"></div>
-                    <!-- Catalog -->
+                </div>
 
-                    <br/><br/>
-                    <div class="box">
-                        <div id="col-l">
+                <div id="search-bottom"></div>
+                <!-- Catalog -->
+
+                <br/><br/>
+                <div class="box">
+                    <div id="col-l">
+                        <div id="langs">
+                            <%@include file="header.jsp" %>
+                        </div>
 
                             <div class="title01-top"></div>
                             <div class="title01"> 
                                 <br/>
                                 <div class="title01-in">
 
-                                    <h2 align="center" class="ico-list">User's List</h2>
+                                    <h2 align="center" class="ico-list"><fmt:message key="lbl.userList"/></h2>
                                     <hr/>
                                 </div>
 
@@ -119,12 +137,11 @@
 
                                     <tr>
 
-                                        <td>Service Number</td>
-                                        <td>User Name</td>
-                                        <td>Address</td>
-
-                                        <td>Mobile</td>
-                                        <td>Meter Number</td>
+                                        <td><fmt:message key="lbl.serviceNo"/></td>
+                                        <td><fmt:message key="lbl.userName"/></td>
+                                        <td><fmt:message key="lbl.address"/></td>
+                                        <td><fmt:message key="lbl.mobile"/></td>
+                                        <td><fmt:message key="lbl.meterNum"/></td>
 
                                     </tr>
 
@@ -144,7 +161,7 @@
 
                                 </table>
 
-                                <p align="left"><a href="SessionController">Back</a></p>
+                                <p align="left"><a href="SessionController"><fmt:message key="lbl.cancel"/></a></p>
                             </div>
 
                             <div class="title01-bottom"></div>
@@ -174,40 +191,36 @@
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
 
-            <div class="title01-top"></div>
+             <div class="title01-top"></div>
                 <div class="title01">    
                     <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
+                        <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
                     </div>
                 </div>                
                 <div class="title01-bottom"></div>
 
-            <div class="box">
+                <div class="box">
 
 
-            </div> <!-- /box -->
+                </div> <!-- /box -->
 
-            <p class="t-center"><a href="">Show more &raquo;</a></p>
+                <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
 
-        </div> <!-- /page -->
+            </div> <!-- /page -->
 
-        <!-- Footer -->
-        <div id="footer">
-            <hr class="noscreen" />
+            <!-- Footer -->
+            <div id="footer">
+                <hr class="noscreen" />
 
-            <p class="f-right noprint">
-               
-                <a href="">Contact</a>
-            </p>
+                <p class="f-right noprint">
 
-            <p align="center">&copy;&nbsp;2009 <a href="">Your Company</a><br />
-                <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
-            <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+                    <a href=""><fmt:message key="lbl.contact"/></a>
+                </p>
 
+                <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
+                    <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+                </p>
         </div> <!-- /footer -->
-
-
 
     </body>
 </html>

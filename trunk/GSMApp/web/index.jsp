@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -15,6 +14,17 @@
         <script type="text/javascript" src="js/tooltip.js"></script>
         <script type="text/javascript" src="js/showdetail.js"></script>
         <title>GSM | INDEX</title>
+
+        <style type="text/css">
+
+            #langs{
+                position: relative;              
+                left:783px;
+                top: 0px;
+
+            }
+
+        </style>
     </head>
 
     <body>
@@ -49,91 +59,95 @@
             <div id="page" class="box">
 
                 <div id="search-top"></div>
-                <div id="search-in"></div>
-                <div id="search-bottom"></div>
-                <!-- Catalog -->
-
-                <br/><br/>
-                <div class="box">
-                    <div id="col-l">
-
-                        <div class="title01-top"></div>
-                        <div class="title01">    
-                            <div class="title01-in">
-                                <p class="f-right noprint"><strong><a href="" class="add">Submit a Site</a></strong></p>
-                                <h2 class="ico-list">Katalog</h2>
-                            </div>
-                        </div>                
-                        <div class="title01-bottom"></div>
-
-                        <div class="box">
-
-                        </div> <!-- /box -->
-
-                        <hr class="noscreen" />
-                    </div> <!-- /col-l -->
-
-                    <!-- Sidebar -->
-                    <div id="col-r" class="noprint">
-
-                        <!-- Login -->
-                        <div id="signup">
-                            <h3>Actions</h3>
-
-                            <div class="in02">                    
-                                <ul class="nom">
-                                    <li class="ico-reg"><strong> <a href="home.jsp">Login</a></strong></li>
-
-                                </ul>
-                            </div> <!-- /in02 -->
-
-                        </div> <!-- /signup -->
-                        <hr class="noscreen" />
-                        <div id="signup-bottom"></div>
-
-
-                        <script type="text/javascript">
-                            new Control.Tabs('switch');
-                        </script>
-
-                        <hr class="noscreen" />          
-                    </div> <!-- /col-r -->
-                </div> <!-- /box -->
-
-                <div class="title01-top"></div>
-                <div class="title01">    
-                    <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
+                <div id="search-in">
+                    <div id="langs">
+                        <%@include file="header.jsp" %>
                     </div>
-                </div>                
-                <div class="title01-bottom"></div>
+                </div>
+                    <div id="search-bottom"></div>
+                    <!-- Catalog -->
 
-                <div class="box">
+                    <br/><br/>
+                    <div class="box">
+                        <div id="col-l">
+
+                            <div class="title01-top"></div>
+                            <div class="title01">    
+                                <div class="title01-in">
+                                    <p class="f-right noprint"><strong><a href="" class="add"><fmt:message key="lbl.head1"/></a></strong></p>
+                                    <h2 class="ico-list"><fmt:message key="lbl.heading"/></h2>
+                                </div>
+                            </div>                
+                            <div class="title01-bottom"></div>
+
+                            <div class="box">
+
+                            </div> <!-- /box -->
+
+                            <hr class="noscreen" />
+                        </div> <!-- /col-l -->
+
+                        <!-- Sidebar -->
+                        <div id="col-r" class="noprint">
+
+                            <!-- Login -->
+                            <div id="signup">
+                                <h3><fmt:message key="lbl.actions"/></h3>
+
+                                <div class="in02">                    
+                                    <ul class="nom">
+                                        <li class="ico-reg"><strong> <a href="home.jsp"><fmt:message key="lbl.login"/></a></strong></li>
+
+                                    </ul>
+                                </div> <!-- /in02 -->
+
+                            </div> <!-- /signup -->
+                            <hr class="noscreen" />
+                            <div id="signup-bottom"></div>
 
 
-                </div> <!-- /box -->
+                            <script type="text/javascript">
+                                new Control.Tabs('switch');
+                            </script>
 
-                <p class="t-center"><a href="">Show more &raquo;</a></p>
+                            <hr class="noscreen" />          
+                        </div> <!-- /col-r -->
+                    </div> <!-- /box -->
 
-            </div> <!-- /page -->
+                    <div class="title01-top"></div>
+                    <div class="title01">    
+                        <div class="title01-in">
+                            <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
+                        </div>
+                    </div>                
+                    <div class="title01-bottom"></div>
 
-            <!-- Footer -->
-            <div id="footer">
-                <hr class="noscreen" />
+                    <div class="box">
 
-                <p class="f-right noprint">
-                    
-                    <a href="">Contact</a>
-                </p>
 
-                <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
+                    </div> <!-- /box -->
+
+                    <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
+
+                </div> <!-- /page -->
+
+                <!-- Footer -->
+                <div id="footer">
+                    <hr class="noscreen" />
+
+                    <p class="f-right noprint">
+
+                        <a href=""><fmt:message key="lbl.contact"/></a>
+                    </p>
+
+                    <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
+                        <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+                    </p>
                     <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                    <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
-                <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
-            </div> <!-- /footer -->
+                </div> <!-- /footer -->
 
-        </div> <!-- /main -->
+            </div> <!-- /main -->
 
     </body>
 </html>
