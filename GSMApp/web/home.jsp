@@ -22,6 +22,15 @@
                 top: 0px;
 
             }
+            
+            #alertErr{
+                
+                position: relative;
+                left:3px;
+                top:20px;
+                color:red;
+                font-size: large;
+            }
 
         </style>
 
@@ -123,6 +132,16 @@
                         <div class="title01-bottom"></div>
 
 
+                        <%
+                            if (request.getAttribute("403") != null) {
+                        %>
+                        <div id="alertErr">
+                            <%=request.getAttribute("403")%>
+                        </div>
+
+                        <%
+                            }
+                        %>
 
                         <hr class="noscreen" />
                     </div> <!-- /col-l -->
@@ -141,16 +160,6 @@
                                     <table align="center" cell-spacing="8">
 
 
-                                        <%
-                                            if (request.getAttribute("403") != null) {
-                                        %>
-                                        <div style="color:red; padding-left: 500px;">
-                                            <%=request.getAttribute("403")%>
-                                        </div>
-
-                                        <%
-                                            }
-                                        %>
                                         <tr>
                                             <td><fmt:message key="lbl.userName"/></td><td><input type="text" name="userName" id="userName"/></td>
                                         </tr>
