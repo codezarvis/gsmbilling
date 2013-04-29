@@ -1,6 +1,5 @@
-<?xml version="1.0"?>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -30,6 +29,14 @@
                 position: relative;              
                 left:835px;
                 top: -25px;
+
+            }
+            
+            
+            #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
 
             }
         </style>
@@ -70,10 +77,10 @@
 
                 <div id="search-in">
 
-                    <div id="heading"> Welcome, <c:out value="${user.userName}"></c:out> </div>
+                    <div id="heading"> <fmt:message key="lbl.welcome"/>, <c:out value="${user.userName}"></c:out> </div>
                     <div id="val">
 
-                        <a href="SignOutController">SignOut</a>
+                        <a href="SignOutController"><fmt:message key="lbl.signout"/></a>
                     </div>
 
                 </div>
@@ -84,21 +91,24 @@
                 <br/><br/>
                 <div class="box">
                     <div id="col-l">
-
+                        
+                    <div id="langs">
+                        <%@include file="header.jsp" %>
+                    </div>
                         <div class="title01-top"></div>
                         <div class="title01">    
                             <div class="title01-in">
 
-                                <h2 class="ico-list">Katalog</h2>
+                                <h2 class="ico-list"><fmt:message key="lbl.heading"/></h2>
                             </div>
 
                             <ul>
-                                <li> <a href="GetAllController">Create User</a></li><br/>
-                                <li> <a href="createOperator.jsp">Create MeterOperator</a></li><br/>
-                                <li> <a href="ListUsersController">List All Users</a></li><br/>
-                                <li><a href="ListOperatorController">List Operators</a></li><br/>
-                                <li> <a href="billReport.jsp">Bill Reports</a></li><br/>
-                                <li> <a href="changepassword.jsp">ChangePassword</a></li><br/>
+                                <li> <a href="GetAllController"><fmt:message key="lbl.user"/></a></li><br/>
+                                <li> <a href="createOperator.jsp"><fmt:message key="lbl.operator"/></a></li><br/>
+                                <li> <a href="ListUsersController"><fmt:message key="lbl.userList"/></a></li><br/>
+                                <li><a href="ListOperatorController"><fmt:message key="lbl.opeList"/></a></li><br/>
+                                <li> <a href="billReport.jsp"><fmt:message key="lbl.billReports"/></a></li><br/>
+                                <li> <a href="changepassword.jsp"><fmt:message key="lbl.changePwd"/></a></li><br/>
                             </ul>
                             <div class="title01-bottom"></div>
                         </div>                
@@ -130,7 +140,7 @@
             <div class="title01-top"></div>
             <div class="title01">    
                 <div class="title01-in">
-                    <h3 class="ico-info">E-Bill App</h3>
+                    <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
                 </div>
             </div>                
             <div class="title01-bottom"></div>
@@ -140,7 +150,7 @@
 
             </div> <!-- /box -->
 
-            <p class="t-center"><a href="">Show more &raquo;</a></p>
+            <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
 
         </div> <!-- /page -->
 
@@ -150,12 +160,12 @@
 
             <p class="f-right noprint">
 
-                <a href="">Contact</a>
+                <a href=""><fmt:message key="lbl.contact"/></a>
             </p>
 
-            <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
+            <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
                 <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
+            </p>
             <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
         </div> <!-- /footer -->

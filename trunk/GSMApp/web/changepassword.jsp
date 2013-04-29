@@ -1,6 +1,14 @@
-<?xml version="1.0"?>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<c:if test="${param['lang']!=null}">
+
+    <fmt:setLocale value="${param['lang']}" scope="session"/>
+
+
+</c:if>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -41,6 +49,15 @@
                 position: relative;              
                 left:783px;
                 top: -25px;
+
+            }
+
+
+
+            #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
 
             }
         </style>
@@ -133,61 +150,64 @@
                 <div id="search-top"></div>
                 <div id="search-in">
 
-                    <div id="heading"> Welcome, <c:out value="${user.userName}"></c:out> </div>
-                        <div id="val">
-                            <a href="SessionController">Home</a> | <a href="SignOutController">SignOut</a>
-
-                        </div>
+                    <div id="heading"> <fmt:message key="lbl.welcome"/>, <c:out value="${user.userName}"></c:out> </div>
+                    <div id="val">
+                        <a href="SessionController"><fmt:message key="lbl.home"/></a> | <a href="SignOutController"><fmt:message key="lbl.signout"/></a>
 
                     </div>
 
-                    <div id="search-bottom"></div>
-                    <!-- Catalog -->
+                </div>
 
-                    <br/><br/>
-                    <div class="box">
-                        <div id="col-l">
+                <div id="search-bottom"></div>
+                <!-- Catalog -->
 
-                            <div class="title01-top"></div>
-                            <div class="title01"> 
-                                <br/>
-                                <div class="title01-in">
+                <br/><br/>
+                <div class="box">
+                    <div id="col-l">
 
-                                    <h2 align="center" class="ico-list">Change Your Password Here</h2>
-                                    <hr/>
-                                </div>
+                        <div id="langs">
+                            <%@include file="header.jsp" %>
+                        </div>
+                        <div class="title01-top"></div>
+                        <div class="title01"> 
+                            <br/>
+                            <div class="title01-in">
 
-                                <form id="changePwdForm">
-                                    <div id="table">
+                                <h2 align="center" class="ico-list"><fmt:message key="lbl.pwdHeading"/></h2>
+                                <hr/>
+                            </div>
 
-                                        <table>
-                                            <tr>
-                                                <td>UserName</td><td><input type="text" name="userName" id="userName" value="${user.getUserName()}" readonly="readonly"/></td>
+                            <form id="changePwdForm">
+                                <div id="table">
+
+                                    <table>
+                                        <tr>
+                                            <td><fmt:message key="lbl.userName"/></td><td><input type="text" name="userName" id="userName" value="${user.getUserName()}" readonly="readonly"/></td>
                                         </tr>
                                         <tr></tr><tr></tr><tr></tr>
 
                                         <tr>
-                                            <td>Current Password</td><td><input type="password" name="currentPwd" id="currentPwd"/></td>
+                                            <td><fmt:message key="lbl.password"/></td><td><input type="password" name="currentPwd" id="currentPwd"/></td>
                                         </tr>
 
                                         <tr></tr><tr></tr><tr></tr>
                                         <tr>
 
-                                            <td>New Password</td><td><input type="password" name="newPwd" id="newPwd"/></td>
+                                            <td><fmt:message key="lbl.newPwd"/></td><td><input type="password" name="newPwd" id="newPwd"/></td>
                                         </tr>
 
                                         <tr></tr><tr></tr><tr></tr>
 
                                         <tr>
-                                            <td>Confirm Password</td><td><input type="password" name="confirmPwd" id="confirmPwd"/></td>
+                                            <td><fmt:message key="lbl.cnfrmPwd"/></td><td><input type="password" name="confirmPwd" id="confirmPwd"/></td>
                                         </tr>
 
                                         <tr></tr><tr></tr><tr></tr><tr></tr>
                                     </table>
 
-                                    <input type="button" value="Change Password" id="submitbtn"/>
+                                    <input type="button" value="<fmt:message key="lbl.pwdBtn"/>" id="submitbtn"/>
                                     <br/><br/>
-                                    <p><a href="SessionController">Back</a></p>
+                                    <p><a href="SessionController"><fmt:message key="lbl.cancel"/></a></p>
 
                                 </div>
                             </form>
@@ -217,21 +237,20 @@
                     <hr class="noscreen" />          
                 </div> <!-- /col-r -->
             </div> <!-- /box -->
-
-             <div class="title01-top"></div>
-                <div class="title01">    
-                    <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
-                    </div>
-                </div>                
-                <div class="title01-bottom"></div>
+            <div class="title01-top"></div>
+            <div class="title01">    
+                <div class="title01-in">
+                    <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
+                </div>
+            </div>                
+            <div class="title01-bottom"></div>
 
             <div class="box">
 
 
             </div> <!-- /box -->
 
-            <p class="t-center"><a href="">Show more &raquo;</a></p>
+            <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
 
         </div> <!-- /page -->
 
@@ -240,14 +259,13 @@
             <hr class="noscreen" />
 
             <p class="f-right noprint">
-                
-                <a href="">Contact</a>
+
+                <a href=""><fmt:message key="lbl.contact"/></a>
             </p>
 
-            <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
+            <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
                 <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
-            <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+            </p>
 
         </div> <!-- /footer -->
 

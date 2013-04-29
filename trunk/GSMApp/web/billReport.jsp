@@ -1,5 +1,13 @@
-<?xml version="1.0"?>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<c:if test="${param['lang']!=null}">
+
+    <fmt:setLocale value="${param['lang']}" scope="session"/>
+
+
+</c:if>
 <%@page import="java.util.List"%>
 <%@page import="com.gsm.domain.sub.Client"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -21,6 +29,13 @@
 
         <style type="text/css">
 
+            #langs{
+                position: relative;              
+                left:783px;
+                top: -100px;
+
+            }
+
             #tableView1{
 
                 position: relative;
@@ -40,7 +55,7 @@
             #val{
                 position: relative;              
                 left:783px;
-                top: -1px;
+                top: -26px;
 
             }
 
@@ -100,144 +115,145 @@
                 <div>
                     <p class="nom"><strong><%=new java.util.Date()%></strong>
                 </div>
-                    <br/>
-                    <hr class="noscreen" />
-                </div> <!-- /header -->
+                <br/>
+                <hr class="noscreen" />
+            </div> <!-- /header -->
 
-                <!-- Tabs -->
+            <!-- Tabs -->
 
-                <!-- Search -->
+            <!-- Search -->
 
-                <script type="text/javascript">
-                    new Control.Tabs('search-type');
-                </script>
+            <script type="text/javascript">
+                new Control.Tabs('search-type');
+            </script>
 
 
-                <!-- Content -->
-                <div id="page" class="box">
+            <!-- Content -->
+            <div id="page" class="box">
 
-                    <div id="search-top"></div>
-                    <div id="search-in">
+                <div id="search-top"></div>
+                <div id="search-in">
 
+                    <div id="heading"> <fmt:message key="lbl.welcome"/>, <c:out value="${user.userName}"></c:out> </div>
                         <div id="val">
-                            <a href="admin.jsp">Home</a> | <a href="SignOutController">SignOut</a>
+                            <a href="admin.jsp"><fmt:message key="lbl.home"/></a> | <a href="SignOutController"><fmt:message key="lbl.signout"/></a>
 
+                    </div>
+
+                </div>
+
+                <div id="search-bottom"></div>
+                <!-- Catalog -->
+
+                <br/><br/>
+                <div class="box">
+                    <div id="col-l">
+                        <div id="langs">
+                            <%@include file="header.jsp" %>
                         </div>
 
-                    </div>
+                        <div class="title01-top"></div>
+                        <div class="title01"> 
+                            <br/>
+                            <div class="title01-in">
 
-                    <div id="search-bottom"></div>
-                    <!-- Catalog -->
+                                <h2 align="center" class="ico-list"><fmt:message key="lbl.report"/></h2>
+                                <hr/>
+                            </div>
 
-                    <br/><br/>
-                    <div class="box">
-                        <div id="col-l">
+                            <div id="tableView1">
 
-                            <div class="title01-top"></div>
-                            <div class="title01"> 
-                                <br/>
-                                <div class="title01-in">
+                                <form id="billReport">
 
-                                    <h2 align="center" class="ico-list">Operator's List</h2>
-                                    <hr/>
-                                </div>
+                                    <p align="center">
+                                        <fmt:message key="lbl.month"/><select id="month" name="month">
 
-                                <div id="tableView1">
+                                            <option value="01">Jan</option>
+                                            <option value="02">Feb</option>
+                                            <option value="03">Mar</option>
+                                            <option value="04">Apr</option>
+                                            <option value="05">May</option>
+                                            <option value="06">June</option>
+                                            <option value="07">Jul</option>
+                                            <option value="08">Aug</option>
+                                            <option value="09">Sept</option>
+                                            <option value="10">Oct</option>
+                                            <option value="11">Nov</option>
+                                            <option value="12">Dec</option>
 
-                                    <form id="billReport">
+                                        </select>
 
-                                        <p align="center">
-                                            Month<select id="month" name="month">
+                                        <select id="year" name="year">
 
-                                                <option value="01">Jan</option>
-                                                <option value="02">Feb</option>
-                                                <option value="03">Mar</option>
-                                                <option value="04">Apr</option>
-                                                <option value="05">May</option>
-                                                <option value="06">June</option>
-                                                <option value="07">Jul</option>
-                                                <option value="08">Aug</option>
-                                                <option value="09">Sept</option>
-                                                <option value="10">Oct</option>
-                                                <option value="11">Nov</option>
-                                                <option value="12">Dec</option>
+                                            <option>2013</option>
+                                            <option>2014</option>
+                                            <option>2015</option>
+                                        </select>
 
-                                            </select>
+                                        <input type="button" value="<fmt:message key="lbl.submit"/>" id="sbmtBtn">
+                                    </p>
 
-                                            <select id="year" name="year">
+                                    <div id="reportDiv"></div>
 
-                                                <option>2013</option>
-                                                <option>2014</option>
-                                                <option>2015</option>
-                                            </select>
+                                </form>
+                            </div>
 
-                                            <input type="button" value="Submit" id="sbmtBtn">
-                                        </p>
-
-                                        <div id="reportDiv"></div>
-
-                                    </form>
-                                </div>
-
-                                <div class="title01-bottom"></div>
-                            </div>                
+                            <div class="title01-bottom"></div>
+                        </div>                
 
 
-                            <div class="box">
+                        <div class="box">
 
-                            </div> <!-- /box -->
-
-                            <hr class="noscreen" />
-                        </div> <!-- /col-l -->
-
-                        <!-- Sidebar -->
-
-
+                        </div> <!-- /box -->
 
                         <hr class="noscreen" />
+                    </div> <!-- /col-l -->
+
+                    <!-- Sidebar -->
 
 
 
-                        <script type="text/javascript">
-                            new Control.Tabs('switch');
-                        </script>
-
-                        <hr class="noscreen" />          
-                    </div> <!-- /col-r -->
-                </div> <!-- /box -->
-
-               <div class="title01-top"></div>
-                <div class="title01">    
-                    <div class="title01-in">
-                        <h3 class="ico-info">E-Bill App</h3>
-                    </div>
-                </div>                
-                <div class="title01-bottom"></div>
-
-                <div class="box">
+                    <hr class="noscreen" />
 
 
-                </div> <!-- /box -->
 
-                <p class="t-center"><a href="">Show more &raquo;</a></p>
+                    <script type="text/javascript">
+                        new Control.Tabs('switch');
+                    </script>
 
-            </div> <!-- /page -->
+                    <hr class="noscreen" />          
+                </div> <!-- /col-r -->
+            </div> <!-- /box -->
+            <div class="title01-top"></div>
+            <div class="title01">    
+                <div class="title01-in">
+                    <h3 class="ico-info"><fmt:message key="lbl.appName"/></h3>
+                </div>
+            </div>                
+            <div class="title01-bottom"></div>
 
-            <!-- Footer -->
-            <div id="footer">
-                <hr class="noscreen" />
+            <div class="box">
 
-                <p class="f-right noprint">
-                  
-                    <a href="">Contact</a>
-                </p>
 
-                <p align="center">&copy;&nbsp;2013 <a href="">Your Company</a><br />
-                    <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-                    <span id="copy"><a href="http://www.nuviotemplates.com/">Free web templates</a> by <a href="http://www.qartin.cz/">Qartin</a><br /><span class="smaller">Visit <a href="http://www.southpadre.net/" title="South Padre Island">South Padre Island</a></span></span></p>
+            </div> <!-- /box -->
+
+            <p class="t-center"><a href=""><fmt:message key="lbl.showMore"/></a></p>
+
+        </div> <!-- /page -->
+
+        <!-- Footer -->
+        <div id="footer">
+            <hr class="noscreen" />
+
+            <p class="f-right noprint">
+
+                <a href=""><fmt:message key="lbl.contact"/></a>
+            </p>
+
+            <p align="center">&copy;&nbsp;2013 <a href=""><fmt:message key="lbl.company"/></a><br />
                 <!-- Do you want to remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
-
-            </div> <!-- /footer -->
+            </p>
+        </div> <!-- /footer -->
 
     </body>
 </html>
