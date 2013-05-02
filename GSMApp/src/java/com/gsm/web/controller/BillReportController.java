@@ -32,9 +32,10 @@ public class BillReportController extends HttpServlet {
         int month = Integer.parseInt(request.getParameter("month"));
         int year = Integer.parseInt(request.getParameter("year"));
 
+        System.out.println("========"+month+"==========="+year);
         PaymentService paymentService = DomainServiceUtils.getPaymentService();
         List<Payments> payList = paymentService.getAll();
-        System.out.println("===========" + payList);
+        
         if (payList == null) {
 
             return;
@@ -61,6 +62,7 @@ public class BillReportController extends HttpServlet {
 
             int yr = calendar.get(Calendar.YEAR);
 
+            System.out.println("***********"+mon+"**********"+yr);
             if (mon == month && yr == year) {
                 total = total + payments.getBillAmount();
                 System.out.println(":::::::::::::::::::::" + total);
@@ -75,7 +77,7 @@ public class BillReportController extends HttpServlet {
 
         }
         out.println("<tr>");
-        out.println("<td><fmt:message key=\"lbl.total\"/></td>");
+        out.println("<td>Total</td>");
         out.println("<td></td><td></td>");
         out.println("<td>" + total + "</td>");
         out.println("</tr>");
